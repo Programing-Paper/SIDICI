@@ -188,5 +188,4 @@ $result = $sentencia->fetchAll(PDO::FETCH_OBJ);
 </div>
 <?php
 include('footer.php');
-
 ?>
