@@ -32,8 +32,8 @@ $ficheiro = $_FILES["path"]["tmp_name"];
 switch ($action) {
   case "Restaurar copia":
     $dbname = "SIDICI"; //database name
-    $dbconn = pg_pconnect("host=ssh.mservers.ovh port=5432 dbname=$dbname 
-user=Jrodriguez password=Amovil.2022$"); //connectionstring
+    $dbconn = pg_pconnect("host=localhost port=5432 dbname=$dbname 
+user=postgres password=origami123"); //connectionstring
     if (!$dbconn) {
       echo "Can't connect.\n";
       exit;
@@ -49,8 +49,8 @@ user=Jrodriguez password=Amovil.2022$"); //connectionstring
     break;
   case "Export":
     $dbname = "SIDICI"; //database name
-    $dbconn = pg_pconnect("host=ssh.mservers.ovh port=5432 dbname=$dbname 
-user=Jrodriguez password=Amovil.2022$"); //connectionstring
+    $dbconn = pg_pconnect("host=localhost dbname=$dbname 
+user=postgres password=origami123"); //connectionstring
     if (!$dbconn) {
       echo "Can't connect.\n";
       exit;
@@ -206,7 +206,7 @@ include('alerts.php');
   <nav class="containernav-activos">
     <h1>Copias de seguridad</h1>
   </nav>
-  <main class="containermain-activos d-flex justify-content-center align-items-center align-content-around">
+  <main class="container-main d-flex justify-content-center align-items-center align-content-around">
   <div class="d-flex mx-6">
       <form method='POST' name="dataForm" enctype="multipart/form-data">
         <input type="file" name="path" class='form-control mt-1' id="path"/>

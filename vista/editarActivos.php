@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 include('header.php');
 include('controller.php');
 
@@ -34,15 +33,15 @@ $usuario = $_GET['usu'];
                     </div>
                     <div class="form-group col-md-6">
                         <p>Id empleado: </p>
-			<select required name="idempleado" id="idempleado" class='form-control' style="width: 100%;">
-                        <?php
-                        $sentencia0 = $db->query("SELECT * FROM empleados ");
-                        $result0 =  $sentencia0->fetchAll(PDO::FETCH_OBJ);
-                         foreach ($result0 as $res0) { ?>
+                        <select required name="idempleado" id="idempleado" class='form-control' style="width: 100%;">
+                            <?php
+                            $sentencia0 = $db->query("SELECT * FROM empleados ");
+                            $result0 =  $sentencia0->fetchAll(PDO::FETCH_OBJ);
+                            foreach ($result0 as $res0) { ?>
                                 <option value="<?php echo $res0->idempleado ?>" <?php
-                                           if ($result->idempleado == $res0->idempleado) {
-                                          echo "selected";
-                                          } ?>>
+                                                                                if ($result->idempleado == $res0->idempleado) {
+                                                                                    echo "selected";
+                                                                                } ?>>
                                     <?php echo $res0->nombre ?></option>
                             <?php } ?>
                         </select>
@@ -85,13 +84,13 @@ $usuario = $_GET['usu'];
                     </div>
                     <div class="form-group col-md-4">
                         <label for="fecha">Fecha</label>
-                        <input value="<?php echo $result->fecha; ?>" required name="fecha" type="date" id="fecha" class="form-control" minlength="4" maxlength="8" >
+                        <input value="<?php echo $result->fecha; ?>" required name="fecha" type="date" id="fecha" class="form-control" minlength="4" maxlength="8">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="caract">Características</label>
-                        <textarea placeholder="Informacion del Activo" class='form-control' required name='caract' style='resize: none;' minlenght="10" maxlength="200" ><?php echo $result->observaciones ?></textarea>
+                        <textarea placeholder="Informacion del Activo" class='form-control' required name='caract' style='resize: none;' minlenght="10" maxlength="200"><?php echo $result->observaciones ?></textarea>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary mx-3" name="guardar">Guardar</button>
@@ -133,14 +132,16 @@ $usuario = $_GET['usu'];
 if (isset($_POST['guardar'])) {
     include_once "controller.php";
 
-    $disp= '';
-    if ($idempleado=='22222222') {
-        $disp='Creado';
-    }else{$disp='Asignado';}
+    $disp = '';
+    if ($idempleado == '22222222') {
+        $disp = 'Creado';
+    } else {
+        $disp = 'Asignado';
+    }
 
     $sql = $db->prepare("UPDATE activos SET idempleado = ?, id_estadoact = ?, serial = ?, so = ?, marca = ?, tipo = ?, 
                         fecha = ?, observaciones = ?, estado = ? WHERE idactivo = ?;");
-    $res = $sql->execute([$idempleado,$estado, $serie, $so, $marca, $tipo, $fecha, $caract,$disp, $id]);
+    $res = $sql->execute([$idempleado, $estado, $serie, $so, $marca, $tipo, $fecha, $caract, $disp, $id]);
     if (!$res) {
         #No existe
         echo "<script>alert('Error, por favor valide que el usuario es correctos')</script>";
