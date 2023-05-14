@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include('header.php');
 include('controller.php');
@@ -6,20 +6,8 @@ include('alerts.php');
 
 $usuario = $_GET['usu'];
 
-$sql = $db->query("SELECT count(*) from novedades");
-$res_count = $sql->fetchColumn();
-
-$activosPage = $res_count / 8;
-$activosPage = ceil($activosPage);
-
-$inicio = ($_GET['pag'] - 1) * 8;
-$fin = 8;
-
-$sentencia = $db->query("SELECT n.*,e.nombre,a.marca,a.tipo FROM novedades n, empleados e, activos a 
-WHERE n.idempleado = e.idempleado AND n.idactivo = a.idactivo order by id_novedad LIMIT $fin offset $inicio");
-$result = $sentencia->fetchAll(PDO::FETCH_OBJ);
-
 ?>
+
 <div class='main-principal'></div>
 <div class="subcontent">
     <nav class="containernav-nov">
@@ -41,8 +29,6 @@ $result = $sentencia->fetchAll(PDO::FETCH_OBJ);
                         <div class="modal-body">
                             <form action="insertarDatos.php?guardar=novedad&usu=<?php echo $_GET['usu'] ?>" method="POST">
                                 <div class="form-novedades">
-                                    <!-- <label for="id_novedad">Id Novedad</label>
-                                <input type="text" placeholder="Ingrese ID" class='form-control' required name='id_novedad' /> -->
                                     <label for="fecha">Fecha</label>
                                     <input type="date" class='form-control' required name='fecha' />
                                     <label for="idempleado">Usuario afectado</label>
@@ -78,69 +64,93 @@ $result = $sentencia->fetchAll(PDO::FETCH_OBJ);
                                 </div>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>
+        </div>
     </nav>
-    <main class="containermain-nov" style="height: 71vh;">
-        <!--  -->
+    <main class="container-main">
+        <!-- Tabla server-side novedades  -->
         <div class="tables-sidici container-fluid">
-            <table id="example" class="table table-striped position-relative table-sm" style="width:100%">
+            <table id="tablenovedades" class="table table-striped table-sm">
                 <thead>
                     <tr class='textwhite'>
-                        <th>ID NOVEDAD</th>
-                        <th>DESCRIPCIÓN</th>
-                        <th>USUARIO AFECTADO</th>
+                        <th>ID</th>
+                        <th>DESCRIPCION</th>
+                        <th>AFECTADO</th>
                         <th>FECHA</th>
-                        <th>NOMBRE</th>
-                        <th>EDITAR</th>
+                        <th>ACTIVO</th>
+                        <th>OPCIONES</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <?php foreach ($result as $res) { ?>
-                        <tr class='textwhite'>
-                            <td><?php echo $res->id_novedad ?></td>
-                            <td><?php echo $res->descripcion ?></td>
-                            <td><?php echo $res->nombre ?></td>
-                            <td><?php echo $res->fecha ?></td>
-                            <td><?php echo $res->marca . "-" . $res->tipo ?></td>
-                            <?php if ($res->resuelto == 'SI' ) { ?>
-                                <td>Cerrado</td>
-                            <?php } else { ?>
-                                <td><a href="<?php echo "editarNovedad.php?page=editarNovedad&id=" . $res->id_novedad . "&usu=" . $usuario ?>"><i class="bi bi-pencil-square textwhite"></i></a></td>
-                            <?php }
-                             ?>
-                        </tr>
-                    <?php } ?>
-                </tbody>
+                <tbody class='textwhite'></tbody>
             </table>
-            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-            <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-            <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-            <script src='..\Javascript\datatables.js'></script>
-        </div>
-        <div id="paginacion">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item <?php echo $_GET['pag'] <= 1 ? 'disabled' : ''; ?>">
-                        <a class="page-link" href="novedades.php?page=novedades&usu=<?php echo $usuario; ?>&pag=<?php echo $_GET['pag'] - 1; ?>">
-                            Anterior
-                        </a>
-                    </li>
-                    <?php for ($i = 0; $i < $activosPage; $i++) { ?>
-                        <li class="page-item <?php echo $_GET['pag'] == $i + 1 ? 'active' : ''; ?>">
-                            <a class="page-link" href="novedades.php?page=novedades&usu=<?php echo $usuario; ?>&pag=<?php echo $i + 1; ?> ">
-                                <?php echo $i + 1; ?>
-                            </a>
-                        <?php }  ?>
-                        <li class="page-item <?php echo $_GET['pag'] >= $activosPage ? 'disabled' : ''; ?>">
-                            <a class="page-link" href="novedades.php?page=novedades&usu=<?php echo $usuario; ?>&pag=<?php echo $_GET['pag'] + 1; ?>">
-                                Siguiente</a>
-                        </li>
-                </ul>
-            </nav>
         </div>
     </main>
 </div>
-<?php include("footer.php"); ?>
+<?php
+include('footer.php');
+?>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#tablenovedades').DataTable({
+            dom: 'frtip',
+            responsive: true,
+            scrollCollapse: false,
+            ordering: false,
+            info: false,
+            'processing': true,
+            'serverSide': true,
+            'serverMethod': 'POST',
+            'ajax': {
+                'url': 'datosnovedades.php',
+            },
+            'columns': [{
+                    data: 'id_novedad'
+                },
+                {
+                    data: 'descripcion'
+                },
+                {
+                    data: 'nombre'
+                },
+                {
+                    data: 'fecha'
+                },
+                {
+                    data: 'activo'
+                },
+                {
+                    data: 'editar'
+                },
+            ],
+            // "pageLength": 2,
+            // order: [[3, 'desc']],
+
+            "language": {
+                "decimal": "",
+                "emptyTable": "No hay registros",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "Mostrar _MENU_ Entradas",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "Buscar:",
+                "zeroRecords": "Sin resultados encontrados",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Ultimo",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                }
+            }
+        });
+    });
+</script>

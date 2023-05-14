@@ -1,10 +1,10 @@
 <?php
 
-$usuario="Jrodriguez";
-$host= "ssh.mservers.ovh";
+$usuario="postgres";
+$host= "localhost";
 $port="5432";
 $dbname="SIDICI";
-$passw="Amovil.2022$";
+$passw="origami123";
 try {
     $db= new PDO("pgsql:host=$host;port=$port;dbname=$dbname",$usuario,$passw);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

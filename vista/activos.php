@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include('header.php');
 include('controller.php');
@@ -6,20 +6,11 @@ include('alerts.php');
 
 $usuario = $_GET['usu'];
 
-$sql = $db->query("SELECT count(*) from activos");
-$res_count = $sql->fetchColumn();
 
-$activosPage = $res_count / 8;
-$activosPage = ceil($activosPage);
-
-$inicio = ($_GET['pag'] - 1) * 8;
-$fin = 8;
-
-$sentencia = $db->query("SELECT a.*,e.nombre,em.nombre as empleado FROM activos a, estado_activos e, empleados em where a.id_estadoact = e.id_estadoact and a.idempleado = em.idempleado 
-order by idactivo LIMIT $fin offset $inicio");
-$result = $sentencia->fetchAll(PDO::FETCH_OBJ);
+echo $usuario;
 
 ?>
+
 <div class='main-principal'></div>
 <div class="subcontent">
     <nav class="containernav-activos">
@@ -129,63 +120,97 @@ $result = $sentencia->fetchAll(PDO::FETCH_OBJ);
         </div>
     </nav>
 
-    <main class="containermain-activos">
+    <main class="container-main">
         <!--  -->
         <div class="tables-sidici container-fluid">
-            <table id="example" class="table table-striped table-sm">
+            <table id="tableactivos" class="table table-striped table-sm">
                 <thead>
                     <tr class='textwhite'>
                         <th>ID</th>
                         <th>ESTADO</th>
-			<th>RESPONSABLE</th>
+                        <th>RESPONSABLE</th>
                         <th>TIPO</th>
                         <th>SERIAL</th>
                         <th>MARCA</th>
-                        <th>EDITAR</th>
+                        <th>FECHA</th>
+                        <th>OPCIONES</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <?php foreach ($result as $res) { ?>
-                        <tr class='textwhite'>
-                            <td><?php echo $res->idactivo ?></td>
-                            <td><?php echo $res->estado ?></td>
-			    <td width="300px"><?php echo $res->empleado ?></td>
-                            <td><?php echo $res->tipo ?></td>
-                            <td><?php echo $res->serial ?></td>
-                            <td><?php echo $res->marca ?></td>
-                            <td><a href="<?php echo "editarActivos.php?page=editaractivo&id=" . $res->idactivo . "&usu=" . $usuario ?>"><i class="bi bi-pencil-square textwhite"></i></a></td>
-                        </tr>
-                    <?php } ?>
-                </tbody>
+                <tbody class='textwhite'></tbody>    
             </table>
-            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-            <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-            <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-            <script src='..\Javascript\datatables.js'></script>
-        </div>
-        <div id="paginacion">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item <?php echo $_GET['pag'] <= 1 ? 'disabled' : ''; ?>">
-                        <a class="page-link" href="activos.php?page=activos&usu=<?php echo $usuario; ?>&pag=<?php echo $_GET['pag'] - 1; ?>">
-                            Anterior
-                        </a>
-                    </li>
-                    <?php for ($i = 0; $i < $activosPage; $i++) { ?>
-                        <li class="page-item <?php echo $_GET['pag'] == $i + 1 ? 'active' : ''; ?>">
-                            <a class="page-link" href="activos.php?page=activos&usu=<?php echo $usuario; ?>&pag=<?php echo $i + 1; ?> ">
-                                <?php echo $i + 1; ?>
-                            </a>
-                        <?php }  ?>
-                        <li class="page-item <?php echo $_GET['pag'] >= $activosPage ? 'disabled' : ''; ?>">
-                            <a class="page-link" href="activos.php?page=activos&usu=<?php echo $usuario; ?>&pag=<?php echo $_GET['pag'] + 1; ?>">
-                                Siguiente</a>
-                        </li>
-                </ul>
-            </nav>
         </div>
     </main>
 </div>
 <?php
 include('footer.php');
 ?>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#tableactivos').DataTable({
+            dom: 'frtip',
+            responsive: true,
+            scrollCollapse: false,
+            ordering: false,
+            info: false,
+            "paging": true,
+            'processing': true,
+            'serverSide': true,
+            'serverMethod': 'POST',
+            'ajax': {
+                'url': 'datosactivos.php',
+            },
+            'columns': [{
+                    data: 'idactivo'
+                },
+                {
+                    data: 'estado'
+                },
+                {
+                    data: 'empleado'
+                },
+                {
+                    data: 'tipo'
+                },
+                {
+                    data: 'serial'
+                },
+                {
+                    data: 'marca'
+                },
+                {
+                    data: 'fecha'
+                },
+                {
+                    data: 'editar'
+                },
+            ],
+            // "pageLength": 10,
+            order: [[3, 'desc']],
+
+            "language": {
+                "decimal": "",
+                "emptyTable": "No hay registros",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "Mostrar _MENU_ Entradas",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "Buscar:",
+                "zeroRecords": "Sin resultados encontrados",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Ultimo",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                }
+            }
+        });
+    });
+</script>

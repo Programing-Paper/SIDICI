@@ -82,7 +82,7 @@ $usuario = $_GET['usu'];
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary" name="guardar">Guardar</button>
-                <a href="<?php echo "novedades.php?page=novedades&usu=" . $usuario . "&pag=1" ?>" class="btn btn-dark volver">Volver</a>
+                <a href="<?php echo "novedades.php?page=editarNovedad&usu=" . $usuario . "&pag=1" ?>" class="btn btn-dark volver">Volver</a>
             </form>
         </div>
     </div>
@@ -127,7 +127,7 @@ if (isset($_POST['guardar'])) {
         exit();
     } else {
         $_SESSION['alertsucces'] = "Se actualizó la novedad correctamente";
-        echo "<script>window.location.href='novedades.php?page=novedades&usu=$usuario&pag=1'</script>";
+        echo "<script>window.location.href='novedades.php?page=editarNovedad&usu=$usuario&pag=1'</script>";
     }
 }
 

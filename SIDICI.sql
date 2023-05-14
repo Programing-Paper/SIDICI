@@ -1,4 +1,4 @@
-
+ï»¿
 --
 -- Generar Sequencias
 DROP SEQUENCE IF EXISTS admin_idadmin_seq CASCADE;
@@ -30,12 +30,12 @@ estado varchar(20) DEFAULT 'Asignado'::character varying
 -- Creating data for 'activos'
 --
 
-INSERT INTO activos VALUES ('350','1053331039','1','4FZXVC3','WINDOWS','DELL ','Laptop','2022-11-30','Equipo sin número de activo fijo, esta fuera de la oficina ','Asignado');
+INSERT INTO activos VALUES ('350','1053331039','1','4FZXVC3','WINDOWS','DELL ','Laptop','2022-11-30','Equipo sin numero de activo fijo, esta fuera de la oficina ','Asignado');
 INSERT INTO activos VALUES ('257','1098703709','1','PF08Y4HM ','WINDOWS','LENOVO','Laptop','2022-11-30','Ninguna','Asignado');
 INSERT INTO activos VALUES ('244','1096184605','1','PCk4N0CX064898164','WINDOWS','ASUS','Laptop','2022-11-30','Ninguna','Asignado');
 INSERT INTO activos VALUES ('347','1005161040','1','C17G356CQ6L4','macOS','Makbook','Laptop','2022-11-30','Factura # 9177 alfa canal digital','Asignado');
-INSERT INTO activos VALUES ('271','1018510067','1','5CD8383M1P','WINDOWS','HP','Laptop','2022-11-30','Se realizó cambio de batería (17/08/2021)','Asignado');
-INSERT INTO activos VALUES ('272','1018427404','1','5CD81703GV ','WINDOWS','HP','Laptop','2022-11-30','Se realizó cambio de batería Factura FEC No. 2446 (17/08/2021)','Asignado');
+INSERT INTO activos VALUES ('271','1018510067','1','5CD8383M1P','WINDOWS','HP','Laptop','2022-11-30','Se realizo cambio de bateria (17/08/2021)','Asignado');
+INSERT INTO activos VALUES ('272','1018427404','1','5CD81703GV ','WINDOWS','HP','Laptop','2022-11-30','Se realizo cambio de bateria Factura FEC No. 2446 (17/08/2021)','Asignado');
 INSERT INTO activos VALUES ('351','1102364526','1','1H3PVC3','WINDOWS','DELL','Laptop','2022-11-30','Ninguna','Asignado');
 INSERT INTO activos VALUES ('281','1007790592','1','RYZEN 5 -CN K8 Al','WINDOWS','ASUS','Laptop','2022-11-30','FACTURA # TT232  T Y T ','Asignado');
 INSERT INTO activos VALUES ('282','91476804','1','VOSTRO IF2ST43','WINDOWS','VOSTRO','Laptop','2022-11-30','Ninguna','Asignado');
@@ -58,10 +58,10 @@ INSERT INTO activos VALUES ('355','1101698657','1','PF3CCDVM 82C4','WINDOWS','LE
 INSERT INTO activos VALUES ('357','1095955546','1','PF3CBEYP 82C4','WINDOWS','LENOVO','Laptop','2022-11-30','Factura 9414','Asignado');
 INSERT INTO activos VALUES ('361','1098817685','1','N4N0CX14410717B','WINDOWS','ASUS','Laptop','2022-11-30','Factura Alkosto W4221001883','Asignado');
 INSERT INTO activos VALUES ('363','1065641588','1','N5N0CV00S62518D  ','WINDOWS','ASUS','Laptop','2022-11-30','Ninguna','Asignado');
-INSERT INTO activos VALUES ('359','1098742562','1','M7N0CX21585830F','WINDOWS','ASUS','Laptop','2022-11-30','Equipo comprado en tienda y tecnología','Asignado');
+INSERT INTO activos VALUES ('359','1098742562','1','M7N0CX21585830F','WINDOWS','ASUS','Laptop','2022-11-30','Equipo comprado en tienda y tecnologia','Asignado');
 INSERT INTO activos VALUES ('116','22222222','1','E7N0CX205431283','WINDOWS','ASUS','Laptop','2022-12-03','Ninguna','Creado');
-INSERT INTO activos VALUES ('100','22222222','1','5CD7363FVZ','WINDOWS','HP','Laptop','2022-11-30','Se realiza cambio de batería y cargador el 09 de sept 2021.','Creado');
-INSERT INTO activos VALUES ('110','22222222','1','5CD7363FVQ','WINDOWS','HP','Laptop','2022-11-30','Equipo asignado por préstamo temporal ','Creado');
+INSERT INTO activos VALUES ('100','22222222','1','5CD7363FVZ','WINDOWS','HP','Laptop','2022-11-30','Se realiza cambio de bateria y cargador el 09 de sept 2021.','Creado');
+INSERT INTO activos VALUES ('110','22222222','1','5CD7363FVQ','WINDOWS','HP','Laptop','2022-11-30','Equipo asignado por prestamo temporal ','Creado');
 INSERT INTO activos VALUES ('142','22222222','1','D4N0CX215666615G','WINDOWS','ASUS','Laptop','2022-11-30','Ninguna','Creado');
 INSERT INTO activos VALUES ('268','22222222','1','A315-53G-50L8','WINDOWS','ACER','Laptop','2022-11-30','Ninguna','Creado');
 INSERT INTO activos VALUES ('369','22222222','1','M6N0CX13W18324F','WINDOWS','ASUS','Laptop','2022-11-30','Ninguna','Creado');
@@ -125,7 +125,7 @@ INSERT INTO cargo VALUES ('4','Administrador financiero','2000000');
 INSERT INTO cargo VALUES ('5','Director de operaciones','2000000');
 INSERT INTO cargo VALUES ('6','Analista de servicio nivel 1','2000000');
 INSERT INTO cargo VALUES ('7','Analista de servicio nivel 2','2000000');
-INSERT INTO cargo VALUES ('9','Lider de implementación','2000000');
+INSERT INTO cargo VALUES ('9','Lider de implementacion','2000000');
 INSERT INTO cargo VALUES ('11','Director de proyectos','0');
 INSERT INTO cargo VALUES ('12','Lider de proyectos','0');
 INSERT INTO cargo VALUES ('10','Gestor sig','0');
@@ -182,29 +182,29 @@ INSERT INTO empleados VALUES ('1095839818','Laura Mariana Arias Fonceca','318522
 INSERT INTO empleados VALUES ('1098647556','Derlybret Rodriguez Jaimes','3167463613','4','5','CRA 35-36-14 CONJUNTO  REDIL DEL COUNTRY TORRE 2 APTO 303 ','1');
 INSERT INTO empleados VALUES ('10008471','Cesar Augusto Trujillo Salazar','3024095500','7','5','CLLE 54 # 4D-44 APTO 405G LOS CIRUELOS','1');
 INSERT INTO empleados VALUES ('13717893','Cristian Antonio Ayala Rueda','3176676102','15','5','CONJUNTO TAYRONA I TORRE 1 APTO 1201 ','1');
-INSERT INTO empleados VALUES ('91476804','Carlos Alberto Ardila Zuñiga','3173000394','11','5','ENTRE PARQUES GUAYACAN TORRE 2 APTO 101 PIEDECUESTA ','1');
-INSERT INTO empleados VALUES ('1098703709','Cristian Leonardo Peñuela Ayala ','3174033427','13','5','Carrera 50 # 72 -19 Bucaramanga CONJUNTO VILLAS DEL CACIQUE CASA 3 ','1');
-INSERT INTO empleados VALUES ('1018427404','Italo Leonardy Sanchez Quiñonez','3105806317','14','2','  Calle 8 N. 11 ? 01 Casa 49 Quintas de Celta Etapa 1 Funza ? Cundinamarca','1');
-INSERT INTO empleados VALUES ('1018510067','Juan Felipe Aldana Chaparro','3002667809','6','2','Dirección: Carrera 22A #9B - 16 - Paipa - Boyacá','1');
+INSERT INTO empleados VALUES ('91476804','Carlos Alberto Ardila ZuÃ±iga','3173000394','11','5','ENTRE PARQUES GUAYACAN TORRE 2 APTO 101 PIEDECUESTA ','1');
+INSERT INTO empleados VALUES ('1098703709','Cristian Leonardo PeÃ±uela Ayala ','3174033427','13','5','Carrera 50 # 72 -19 Bucaramanga CONJUNTO VILLAS DEL CACIQUE CASA 3 ','1');
+INSERT INTO empleados VALUES ('1018427404','Italo Leonardy Sanchez Quironez','3105806317','14','2','  Calle 8 N. 11 ? 01 Casa 49 Quintas de Celta Etapa 1 Funza ? Cundinamarca','1');
+INSERT INTO empleados VALUES ('1018510067','Juan Felipe Aldana Chaparro','3002667809','6','2','Direccion: Carrera 22A #9B - 16 - Paipa - Boyaca','1');
 INSERT INTO empleados VALUES ('1096184605','Edgar Josue Rivera Angulo','3118350044','9','5','CALLE 17 #2w-80 SENDERO DE MIRAFLORES TORRE 3 PISO 11 APARTAMENTO 1111','1');
 INSERT INTO empleados VALUES ('79189680','Wilton  Cortez Sanchez','316 8784462','6','2','CARERRA 91 # 137-70 SUBA','1');
 INSERT INTO empleados VALUES ('1098608968','Eduardo Andres Diaz Gutierrez','3156417599','6','5','CLLE 23  12 03 CIUDAD VALENCIA','1');
-INSERT INTO empleados VALUES ('1007790592','Steffany Juliana Orejarena Castañeda','3228629792','13','5','VIA GUATIGUARA-VEREDA LA DIVA-  VIALLA ADELA TORRE D APTO 702 PIEDECUESTA ','1');
+INSERT INTO empleados VALUES ('1007790592','Steffany Juliana Orejarena CastaÃ±eda','3228629792','13','5','VIA GUATIGUARA-VEREDA LA DIVA-  VIALLA ADELA TORRE D APTO 702 PIEDECUESTA ','1');
 INSERT INTO empleados VALUES ('1102720850','Carlos Julian Rodriguez Sanchez ','3118756341','2','5','CALLE18 #8W-06 TORRE 1 APTO 202 CONJ REAL ISABELLA BARRIO COMUNEROS PIEDECUESTA ','1');
-INSERT INTO empleados VALUES ('1005161040','Arvey Felipe Saavedra Basto','+57 301 3228811','1','5','Cr 30 Cl 33 79 Ed Lantana','1');
+INSERT INTO empleados VALUES ('1005161040','Arvey Felipe Saavedra Basto','+5730123228811','1','5','Cr 30 Cl 33 79 Ed Lantana','1');
 INSERT INTO empleados VALUES ('1005340274','Yosmar Julian Valderrama Gomez','3173521844','3','5','Calle 4119-43 Barrio Rincon de Giron','1');
 INSERT INTO empleados VALUES ('1098810803','Brayan Mauricio  Diaz Bermudez ','316 3262323','3','5','CL 27 N 9 28 barrio norte ','1');
-INSERT INTO empleados VALUES ('1040742851','Luisa Fernanda Saldarriaga Cardona','+57 310 8268921','10','1','CL 98 SUR # 55 7','1');
+INSERT INTO empleados VALUES ('1040742851','Luisa Fernanda Saldarriaga Cardona','+5731058268921','10','1','CL 98 SUR # 55 7','1');
 INSERT INTO empleados VALUES ('1065641588','Andrea De Los Angeles Alhuema Ordonez','3015183893','6','5','Cra 12c #33-18 barrio Los laureles  ','1');
-INSERT INTO empleados VALUES ('1015453513 ','Marisol Quiroga Prada','3143577055','6','5','Cr 29 12 05 barrio la universidad','1');
-INSERT INTO empleados VALUES ('63542220','Carolina Patiño Silva ','3202937839','6','5','CARRERA 5 # 45-13 BARRIO LAGOS II','1');
+INSERT INTO empleados VALUES ('1015453513','Marisol Quiroga Prada','3143577055','6','5','Cr 29 12 05 barrio la universidad','1');
+INSERT INTO empleados VALUES ('63542220','Carolina PatiÃ±o Silva ','3202937839','6','5','CARRERA 5 # 45-13 BARRIO LAGOS II','1');
 INSERT INTO empleados VALUES ('1101698657','Andres Ferney Medina Ruiz','3102299875','6','5','Carrera 13 # 3-13 barrio villabel ','1');
 INSERT INTO empleados VALUES ('1095955546','Mayra Daniela  Gomez Abreu','313 4833694','6','5','Conjunto Residencial Paseo Real 2 - Torre 18 - Apartamento 5069 - Piedecuesta.','1');
 INSERT INTO empleados VALUES ('1098817685','Anderson Eduardo Abella Luna ','314 3330087','6','2','Calle 56 # 14 - 105 Barrio el reposo','1');
-INSERT INTO empleados VALUES ('1053331039','Jairo Alonso  Ibañez Suarez','3212302996','6','5','carrera 55A 187 51 interior 5 apto 304 barrio mirandela - bogota ','1');
+INSERT INTO empleados VALUES ('1053331039','Jairo Alonso  IbaÃ±ez Suarez','3212302996','6','5','carrera 55A 187 51 interior 5 apto 304 barrio mirandela - bogota ','1');
 INSERT INTO empleados VALUES ('1022950773','Ginna Paola Parra Ramirez','322 7698986','6','5','CALLE 8 5- 21 GUATEQUE BOYACA','1');
 INSERT INTO empleados VALUES ('1098776494','Juan Carlos Diaz Remolina',' 318 7579120','6','5','Carrera 16 117 11 barrio Villas del nogal Bucaramanga','1');
-INSERT INTO empleados VALUES ('1097780634','Angel David  Ayala Jaimes','+57 317 8620965','6','5','CONJUNTO TAYRONA 1 TORRE 1 APTO 1201  CAÑAVERAL ','1');
+INSERT INTO empleados VALUES ('1097780634','Angel David  Ayala Jaimes','+5731708620965','6','5','CONJUNTO TAYRONA 1 TORRE 1 APTO 1201  CAÃ‘AVERAL ','1');
 INSERT INTO empleados VALUES ('1140847441','Juan Camilo  Pavajeau Cuadro','3003025116','1','5','Calle 23  # 4- 50 APto 935 Conjunto Portal de La loma Barrio paseo del puente Piedecuesta ------( CRA 38 # 61- 22 PISO 2 BARRIO RECREO-BARRANQUILLA)','1');
 
 
@@ -272,23 +272,23 @@ INSERT INTO movimientos VALUES ('2','6','20','2022-10-26','2022-10-26','ESTE ES 
 INSERT INTO movimientos VALUES ('3','3','345','2022-10-31','2022-10-31','nsdjkhjklsehbf');
 INSERT INTO movimientos VALUES ('4','3','158','2022-11-01','2022-11-01','ffffdfffffffffffffffffffffffffffffffffffffffffff');
 INSERT INTO movimientos VALUES ('5','6','25','2022-11-22','2022-11-22','ESTO ES UNA PRUEBA PARA EL SERVIDOR');
-INSERT INTO movimientos VALUES ('6','6','25','2022-11-22','2022-11-22','Se le dañó el teclado');
-INSERT INTO movimientos VALUES ('7','0','22','2022-11-22','2022-11-22','esta usado pero está como nuevo. Tiene un buen funcionamiento');
+INSERT INTO movimientos VALUES ('6','6','25','2022-11-22','2022-11-22','Se le daÃ±o el teclado');
+INSERT INTO movimientos VALUES ('7','0','22','2022-11-22','2022-11-22','esta usado pero esta como nuevo. Tiene un buen funcionamiento');
 INSERT INTO movimientos VALUES ('8','0','146','2022-11-22','2022-11-22','es un equipo que sera de gran utilidad par el usuario encargado de gestionarlo.');
-INSERT INTO movimientos VALUES ('9','0','158','2022-02-01','2022-02-01','el activo se utilizara para ofimática profesional y cuentas regresivas pendientes.');
+INSERT INTO movimientos VALUES ('9','0','158','2022-02-01','2022-02-01','el activo se utilizara para ofimatica profesional y cuentas regresivas pendientes.');
 INSERT INTO movimientos VALUES ('10','8','22','2022-11-24','2022-11-24','este es un caso de prueba para registrar un activo');
 INSERT INTO movimientos VALUES ('11','5','22','2022-11-24','2022-11-24','este dispositivo esta malo, hay que cambiarlo');
-INSERT INTO movimientos VALUES ('12','6','25','2022-11-24','2022-11-24','el portátil se cayo de un segundo piso y se le partió la batería esta en reparación.');
-INSERT INTO movimientos VALUES ('13','0','0','2022-11-24','2022-11-24','el equipo sufrio un daño inesperado');
+INSERT INTO movimientos VALUES ('12','6','25','2022-11-24','2022-11-24','el portatil se cayo de un segundo piso y se le partio la bateria esta en reparacion.');
+INSERT INTO movimientos VALUES ('13','0','0','2022-11-24','2022-11-24','el equipo sufrio un daÃ±o inesperado');
 INSERT INTO movimientos VALUES ('14','3','0','2022-02-20','2022-02-20','el equipo exploto durante una actualizacion');
 INSERT INTO movimientos VALUES ('15','0','116','2022-11-29','2022-11-29','Ninguna');
-INSERT INTO movimientos VALUES ('16','0','350','2022-11-29','2022-11-29','Equipo sin número de activo fijo, esta fuera de la oficina ');
+INSERT INTO movimientos VALUES ('16','0','350','2022-11-29','2022-11-29','Equipo sin numero de activo fijo, esta fuera de la oficina ');
 INSERT INTO movimientos VALUES ('17','0','252','2022-11-29','2022-11-29','Ninguna');
 INSERT INTO movimientos VALUES ('18','0','257','2022-11-29','2022-11-29','Ninguna');
 INSERT INTO movimientos VALUES ('19','0','244','2022-11-29','2022-11-29','Ninguna');
 INSERT INTO movimientos VALUES ('20','0','347','2022-11-29','2022-11-29','Factura # 9177 alfa canal digital');
-INSERT INTO movimientos VALUES ('21','0','271','2022-11-30','2022-11-30','Se realizó cambio de batería (17/08/2021)');
-INSERT INTO movimientos VALUES ('22','0','272','2022-11-30','2022-11-30','Se realizó cambio de batería Factura FEC No. 2446 (17/08/2021)');
+INSERT INTO movimientos VALUES ('21','0','271','2022-11-30','2022-11-30','Se realizo cambio de bateria (17/08/2021)');
+INSERT INTO movimientos VALUES ('22','0','272','2022-11-30','2022-11-30','Se realizo cambio de bateria Factura FEC No. 2446 (17/08/2021)');
 INSERT INTO movimientos VALUES ('23','0','351','2022-11-30','2022-11-30','Ninguna');
 INSERT INTO movimientos VALUES ('24','0','281','2022-11-30','2022-11-30','FACTURA # TT232  T Y T ');
 INSERT INTO movimientos VALUES ('25','0','282','2022-11-30','2022-11-30','Ninguna');
@@ -301,10 +301,10 @@ INSERT INTO movimientos VALUES ('31','0','365','2022-11-30','2022-11-30','Ningun
 INSERT INTO movimientos VALUES ('32','0','367','2022-11-30','2022-11-30','Ninguna');
 INSERT INTO movimientos VALUES ('33','0','368','2022-11-30','2022-11-30','Ninguna');
 INSERT INTO movimientos VALUES ('34','0','352','2022-11-30','2022-11-30','Factura FVE32');
-INSERT INTO movimientos VALUES ('35','0','100','2022-11-30','2022-11-30','Se realiza cambio de batería y cargador el 09 de sept 2021.');
+INSERT INTO movimientos VALUES ('35','0','100','2022-11-30','2022-11-30','Se realiza cambio de bateria y cargador el 09 de sept 2021.');
 INSERT INTO movimientos VALUES ('36','0','366','2022-11-30','2022-11-30','Ninguna');
 INSERT INTO movimientos VALUES ('37','0','362','2022-11-30','2022-11-30','Ninguna');
-INSERT INTO movimientos VALUES ('38','0','110','2022-11-30','2022-11-30','Equipo asignado por préstamo temporal ');
+INSERT INTO movimientos VALUES ('38','0','110','2022-11-30','2022-11-30','Equipo asignado por prestamo temporal ');
 INSERT INTO movimientos VALUES ('39','0','115','2022-11-30','2022-11-30','Equipo en optimas condiciones');
 INSERT INTO movimientos VALUES ('40','0','142','2022-11-30','2022-11-30','Ninguna');
 INSERT INTO movimientos VALUES ('41','0','268','2022-11-30','2022-11-30','Ninguna');
@@ -317,12 +317,12 @@ INSERT INTO movimientos VALUES ('47','0','361','2022-11-30','2022-11-30','Factur
 INSERT INTO movimientos VALUES ('48','0','363','2022-11-30','2022-11-30','Ninguna');
 INSERT INTO movimientos VALUES ('49','0','369','2022-11-30','2022-11-30','Ninguna');
 INSERT INTO movimientos VALUES ('50','0','345','2022-11-30','2022-11-30','Ninguna');
-INSERT INTO movimientos VALUES ('51','0','359','2022-11-30','2022-11-30','Equipo comprado en tienda y tecnología');
+INSERT INTO movimientos VALUES ('51','0','359','2022-11-30','2022-11-30','Equipo comprado en tienda y tecnologia');
 INSERT INTO movimientos VALUES ('52','0','134','2022-11-30','2022-11-30','Ninguna');
 INSERT INTO movimientos VALUES ('53','0','269','2022-11-30','2022-11-30','SE ENVIA EQUIPO A GARANTIA SEGUN FACTURA # 8479 T Y T - 20 DE MAYO 2020 ');
 INSERT INTO movimientos VALUES ('54','1095839818','357','2022-12-01','2022-12-01','El equipo presenta error al iniciar cualquier aplicacion de office 365');
 INSERT INTO movimientos VALUES ('55','22222222','999','2022-12-03','2022-12-03','999 pruebas');
-INSERT INTO movimientos VALUES ('57','22222222','176','2022-12-05','2022-12-05','el equipo esta es bueno para hacer escaneo de redes informáticas ');
+INSERT INTO movimientos VALUES ('57','22222222','176','2022-12-05','2022-12-05','el equipo esta es bueno para hacer escaneo de redes informaticas ');
 INSERT INTO movimientos VALUES ('58','22222222','9999','2022-12-05','2022-12-05','pruebas');
 INSERT INTO movimientos VALUES ('59','1140847441','350','2022-12-14','2022-12-14','pruiebas pruenbas');
 
